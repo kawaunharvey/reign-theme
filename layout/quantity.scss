@@ -1,0 +1,22 @@
+.component__quantity {
+  display: flex;
+  width: 100%;
+  min-width: 100px;
+  justify-content: space-around;
+  align-items: center;
+  border: 1px solid black;
+  user-select: none;
+  transition: box-shadow 0.3s ease-in-out;
+  &__plus,
+  &__minus {
+    cursor: pointer;
+  }
+
+  &__number {
+    font-weight: bold;
+  }
+
+  &:hover {
+    box-shadow: 0 0 5px 0 rgba(0, 0, 0, 0.5);
+  }
+}

@@ -1,0 +1,1 @@
+import"Styles/templates/index.scss";console.log("page.js");const productSliders=document.querySelectorAll("[data-component='product-slider']");console.log(productSliders);

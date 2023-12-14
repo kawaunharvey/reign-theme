@@ -1,0 +1,16 @@
+<div class="featured-products">
+  <div
+    class="products"
+    data-component="slider"
+    data-controls="true"
+    {% if section.settings.promotion %}
+      data-promotion="{{ section.settings.promotion }}"
+    {% endif %}
+    data-slides-offset-before="40"
+    data-slides-offset-after="40"
+  >
+    {% for product in section.settings.frontpage %}
+      {% include 'product-card', product: product %}
+    {% endfor %}
+  </div>
+</div>

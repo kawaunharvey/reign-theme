@@ -1,0 +1,45 @@
+[
+  {
+    "name": "theme_info",
+    "theme_name": "Reign By Stephen",
+    "theme_version": "1.0.0",
+    "theme_author": "KWN Digital",
+    "theme_documentation_url": "https://github.com/kawaunharvey/reignbystephen",
+    "theme_support_url": "https://github.com/kawaunharvey/reignbystephen/issues"
+  },
+  {
+    "name": "Global",
+    "settings": [
+      {
+        "type": "text",
+        "id": "site_name",
+        "label": "Site Name"
+      },
+      {
+        "type": "image_picker",
+        "id": "site_logo",
+        "label": "Site Logo"
+      },
+      {
+        "type": "image_picker",
+        "id": "site_footer_logo",
+        "label": "Site Footer Logo"
+      },
+      {
+        "type": "checkbox",
+        "id": "show_promotion",
+        "label": "Show Promotion"
+      },
+      {
+        "type": "text",
+        "id": "promotion_text",
+        "label": "Promotion Text"
+      },
+      {
+        "type": "url",
+        "id": "promotion_link",
+        "label": "Promotion Link"
+      }
+    ]
+  }
+]

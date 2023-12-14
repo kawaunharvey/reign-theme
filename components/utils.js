@@ -1,0 +1,1 @@
+export const getComponents=e=>document.querySelectorAll(`[data-component="${e}"]`);

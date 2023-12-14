@@ -1,0 +1,8 @@
+<div class="linklist">
+  <div class="linklist__title">{{ list.title }}</div>
+  <div class="linklist__links">
+    {% for link in list.links %}
+      <a href="{{ link.url }}">{{ link.title }}</a>
+    {% endfor %}
+  </div>
+</div>

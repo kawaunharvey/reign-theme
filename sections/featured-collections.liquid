@@ -1,0 +1,52 @@
+{% comment %} EXAMPLE SECTION FILE {% endcomment %}
+{{ 'section.featured-collections.css' | asset_url | stylesheet_tag }}
+
+<section>
+  {% for block in section.blocks %}
+    {% render 'featured-collection',
+      collection: block.settings.collection,
+      title: block.settings.title,
+      description: block.settings.description
+    %}
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collections",
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "name": "Collection",
+      "type": "collection",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "description",
+          "label": "Description"
+        },
+        {
+          "type": "text",
+          "id": "buttontext",
+          "label": "Button Text"
+        },
+        {
+          "type": "url",
+          "id": "buttonlink",
+          "label": "Button Link"
+        },
+        {
+          "type": "collection",
+          "id": "collection",
+          "label": "Collection"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

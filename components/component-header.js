@@ -1,0 +1,1 @@
+!async function(){document.querySelector(".header"),matchMedia("(max-width: 767px)").matches}();

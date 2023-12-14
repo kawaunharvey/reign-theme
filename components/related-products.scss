@@ -1,0 +1,20 @@
+.related {
+  &__content {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  &__product {
+    width: 33.33%;
+  }
+
+  &__title {
+    padding: 1rem;
+    text-align: center;
+    width: 100%;
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+    font-size: 0.85rem;
+  }
+}

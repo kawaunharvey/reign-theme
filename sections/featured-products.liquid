@@ -1,0 +1,71 @@
+{{ 'section.featured-products.css' | asset_url | stylesheet_tag }}
+
+<section>
+  {% assign title = section.settings.title %}
+  {% assign link = section.settings.button_link %}
+  {% assign text = section.settings.button_text %}
+
+  {% render 'plist-header', title: title, button_text: text, button_link: link %}
+  <div class="featured-products">
+    <div
+      class="products"
+      data-component="slider"
+      data-controls="true"
+      {% if section.settings.promotion %}
+        data-promotion="{{ section.settings.promotion }}"
+      {% endif %}
+      data-slides-offset-before="40"
+      data-slides-offset-after="40"
+    >
+      {% for product in section.settings.frontpage %}
+        {% include 'product-card', product: product %}
+      {% endfor %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Featured Products",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Featured Products"
+    },
+    {
+      "type": "product_list",
+      "id": "frontpage",
+      "label": "Collection"
+    },
+    {
+      "type": "checkbox",
+      "id": "show-button",
+      "label": "Show Promotion",
+      "default": false
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button Link"
+    },
+    {
+      "type": "checkbox",
+      "id": "show-promotion",
+      "label": "Show Promotion",
+      "default": false
+    },
+    {
+      "type": "richtext",
+      "id": "promotion",
+      "label": "Promotion"
+    }
+  ]
+}
+{% endschema %}

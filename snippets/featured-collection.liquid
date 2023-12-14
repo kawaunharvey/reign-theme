@@ -1,0 +1,55 @@
+<div class="fcollection">
+  <div class="fcollection__header">
+    <div class="fcollection__content">
+      <div class="fcollection__content__block">
+        {% if title %}
+          {% assign ctitle = title %}
+        {% else %}
+          {% assign ctitle = collection.title %}
+        {% endif %}
+        <h2 class="fcollection__title">{{ ctitle }}</h2>
+        {% if description %}
+          {% assign cdescription = description %}
+        {% else %}
+          {% assign cdescription = collection.description %}
+        {% endif %}
+        <div class="fcollection__description">{{ cdescription }}</div>
+        {% if buttonlink %}
+          {% assign cbuttonlink = buttonlink %}
+        {% else %}
+          {% assign cbuttonlink = collection.url %}
+        {% endif %}
+        {% if buttontext %}
+          {% assign cbuttontext = buttontext %}
+        {% else %}
+          {% assign cbuttontext = 'Shop Now' %}
+        {% endif %}
+        <div>
+          <a href="{{ cbuttonurl }}" class="fcollection__link">{{ cbuttontext }}</a>
+        </div>
+      </div>
+    </div>
+    <div class="fcollection__media">
+      <img
+        src="{{ collection.featured_image | image_url: width: 1512, height: 800 }}"
+        alt="{{ collection.image.alt | escape }}"
+        width="1280"
+        height="1280"
+        loading="lazy"
+      >
+    </div>
+  </div>
+  <div class="fcollection__products">
+    {% assign header_button_text = 'Shop ' | append: collection.title %}
+    {% render 'plist-header', title: collection.title, button_text: header_button_text, button_link: collection.url %}
+    <div
+      data-component="slider"
+      data-controls="true"
+      data-slides-offset-before="40"
+    >
+      {% for product in collection.products %}
+        {% render 'product-card', product: product %}
+      {% endfor %}
+    </div>
+  </div>
+</div>

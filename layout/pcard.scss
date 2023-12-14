@@ -1,0 +1,82 @@
+@import "Helpers/_helpers";
+
+.pcard {
+  width: 100%;
+  flex: 0 1 auto;
+  padding: 0 1rem;
+  margin-bottom: 3rem;
+
+  img {
+    width: 100%;
+  }
+
+  &__media {
+    position: relative;
+    overflow: hidden;
+
+    img {
+      display: block;
+    }
+    img:nth-child(2) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1;
+      opacity: 0;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    &:hover {
+      img:nth-child(2) {
+        opacity: 1;
+      }
+    }
+  }
+
+  &__display {
+    position: relative;
+  }
+
+  &__status {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    display: flex;
+  }
+
+  &__nostock,
+  &__sale,
+  &__discount {
+    padding: 0.75rem 1.25rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 0.12rem;
+    font-weight: 700;
+    background-color: #aeaeae;
+    color: #242424;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  &__sale {
+    background-color: red;
+    color: white;
+  }
+
+  &__discount {
+    background-color: white;
+  }
+
+  &__price {
+    display: flex;
+    gap: 0.5rem;
+  }
+
+  &__title {
+    font-weight: bold;
+    margin-top: 1rem;
+    font-size: 1rem;
+  }
+}

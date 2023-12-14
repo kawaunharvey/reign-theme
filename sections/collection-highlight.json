@@ -1,0 +1,13 @@
+{
+    "type": "aside",
+    "name": "Header Group",
+    "sections": {
+      "header": {
+        "type": "example-section",
+        "settings": {}
+      }
+    },
+    "order": [
+      "header"
+    ]
+  }

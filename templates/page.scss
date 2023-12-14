@@ -1,0 +1,14 @@
+@import "Helpers/_helpers";
+
+.page {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+  h1 {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+    letter-spacing: 1rem;
+    margin-top: 3rem;
+  }
+}

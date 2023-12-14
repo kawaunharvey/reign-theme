@@ -1,0 +1,59 @@
+<div class="pcard" id="product_{{ product.id }}">
+  <div class="pcard__display">
+    <a href="{{ product.url | within: collection }}">
+      <div class="pcard__media">
+        {% if product.featured_image %}
+          <img
+            src="{{ product.featured_image.src | image_url: width: 800, height: 1000, crop: 'center' }}"
+            alt="{{ product.title | escape }}"
+            loading="eager"
+            width="800"
+            height="auto"
+          >
+        {% else %}
+          {% if product.images[0] %}
+            <img
+              src="{{ product.images[0] | image_url: width: 800, height: 1000, crop: 'center' }}"
+              alt="{{ product.title | escape }}"
+              loading="lazy"
+              width="800"
+              height="auto"
+            >
+          {% endif %}
+        {% endif %}
+        {% if product.images[1] %}
+          <img
+            src="{{ product.images[1] | image_url: width: 800, height: 1000, crop: 'center' }}"
+            alt="{{ product.title | escape }}"
+            loading="lazy"
+            width="800"
+            height="auto"
+          >
+        {% endif %}
+      </div>
+    </a>
+
+    <div class="pcard__status">
+      {% if product.available == false %}
+        <div class="pcard__nostock">sold out</div>
+      {% endif %}
+      {% if product.compare_at_price > product.price %}
+        <div class="pcard__sale">sale</div>
+        {% assign discount = product.compare_at_price | minus: product.price %}
+        {% assign percentage = discount | times: 100.0 | divided_by: product.compare_at_price %}
+        <div class="pcard__discount">{{ percentage | round }}% off</div>
+      {% endif %}
+    </div>
+  </div>
+  <div class="pcard__title">
+    <a href="{{ product.url | within: collection }}">{{ product.title }}</a>
+  </div>
+  <div class="pcard__price">
+    {% if product.compare_at_price %}
+      <div class="pcard__price__original">
+        <s>{{ product.compare_at_price | money_with_currency }}</s>
+      </div>
+    {% endif %}
+    <div class="pcard__price__current">{{ product.price | money_with_currency }}</div>
+  </div>
+</div>

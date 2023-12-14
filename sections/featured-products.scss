@@ -1,0 +1,71 @@
+@import "Helpers/variables";
+
+.featured-products {
+  // padding: 0 30px;
+  // padding-left: 40px;
+  max-width: 100vw;
+  overflow: hidden;
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5rem;
+    margin-bottom: 2rem;
+
+    &::before {
+      content: "";
+      width: 40px;
+      border-bottom: 1px solid $black;
+    }
+
+    &__title {
+      font-family: $cormorant;
+      font-size: 2.5rem;
+      font-weight: 300;
+      justify-self: start;
+      flex: 1;
+      padding-left: 1rem;
+    }
+
+    &__button {
+      border: 1px solid $black;
+      padding: 0.5rem 1rem;
+      margin-right: 2rem;
+    }
+  }
+
+  // .products {
+  //   display: flex;
+  //   overflow: hidden;
+  //   margin-bottom: 5rem;
+  //   img {
+  //     width: 100%;
+  //     height: 100%;
+  //     object-fit: cover;
+  //     object-position: center;
+  //     position: absolute;
+  //     top: 0;
+  //     left: 0;
+  //   }
+
+  //   &__product {
+  //     padding: 0 15px;
+
+  //     &__image {
+  //       max-width: 400px;
+  //       padding-top: 125%;
+  //       position: relative;
+
+  //       img:last-child {
+  //         opacity: 0;
+  //         transition: all 0.3s ease-in-out;
+  //       }
+  //       &:hover {
+  //         img:last-child {
+  //           opacity: 1;
+  //         }
+  //       }
+  //     }
+  //   }
+  // }
+}

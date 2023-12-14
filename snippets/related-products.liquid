@@ -1,0 +1,12 @@
+{% if products.length > 0 %}
+  <div class="related">
+    <h2 class="related__title">You may also like</h2>
+    <div class="related__content">
+      {% for product in products %}
+        {% unless exclude == product %}
+          <div class="related__product">{% render 'product-card', product: product %}</div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+{% endif %}

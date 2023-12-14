@@ -1,0 +1,9 @@
+{% for product in products %}
+  {% if exclude %}
+    {% unless exclude == product %}
+      {% render 'product-card', product: product %}
+    {% endunless %}
+  {% else %}
+    {% render 'product-card', product: product %}
+  {% endif %}
+{% endfor %}

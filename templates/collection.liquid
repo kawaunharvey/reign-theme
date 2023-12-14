@@ -1,0 +1,25 @@
+<div class="collection">
+  {% paginate collection.products by 15 %}
+    {% comment %} <h1>{{ collection.title }}</h1> {% endcomment %}
+
+    {% if collection.products.size > 0 %}
+      <div class="collection__products">
+        {% for product in collection.products %}
+          <div class="collection__product" data-component="product" data-product-id="{{ product.id }}">
+            {% include 'product-card', product: product %}
+          </div>
+        {% endfor %}
+      </div>
+    {% else %}
+      <div class="collection__no-products">
+        <p>no matches</p>
+      </div>
+    {% endif %}
+
+    {% if paginate.pages > 1 %}
+      <div class="collection__pagination">
+        <div class="collection__pagination__window">{{ paginate | default_pagination }}</div>
+      </div>
+    {% endif %}
+  {% endpaginate %}
+</div>

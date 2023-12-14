@@ -1,0 +1,17 @@
+{% for collection in collections %}
+  {% unless collection.handle == 'frontpage' or collection.products.size <= 0 %}
+    {% capture collection_title %}{{ collection.title | escape }}{% endcapture %}
+    <div class="collection">
+      <a href="{{ collection.url }}">
+        <div class="collection__title">{{ collection_title }}</div>
+      </a>
+      <div class="collection__products">
+        {% for product in collection.products %}
+          <div class="collection__product" data-component="product">
+            {% include 'product-card', product: product %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  {% endunless %}
+{% endfor %}

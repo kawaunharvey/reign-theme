@@ -1,0 +1,17 @@
+{% comment %} EXAMPLE SECTION FILE {% endcomment %}
+{{ 'section.product-highlight.css' | asset_url | stylesheet_tag }}
+
+<section>
+  <h2>{{ section.settings.title }}</h2>
+  {% for block in section.blocks %}
+    {% render block %}
+  {% endfor %}
+</section>
+
+{% schema %}
+{
+  "name": "Featured Collections",
+  "max_blocks": 8,
+  "blocks": []
+}
+{% endschema %}

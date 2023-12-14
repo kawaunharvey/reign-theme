@@ -1,0 +1,81 @@
+<div class="cart">
+  {% if cart.item_count > 0 %}
+    <form action="/cart" method="post" novalidate>
+      <div class="cart__container">
+        <div class="cart__items">
+          {% for item in cart.items %}
+            <div class="cart__item">
+              <div class="cart__item__remove">
+                <a href="/cart/change?line={{ forloop.index }}&amp;quantity=0"> remove </a>
+              </div>
+              <a href="{{ item.url | within: collections.all }}">
+                <div class="cart__item__image">
+                  <img
+                    src="{{ item | image_url: width: 300, height: 450 }}"
+                    width="300"
+                    height="450"
+                    loading="lazy"
+                    alt="{{ item.title | escape }}"
+                  >
+                </div>
+              </a>
+              <div class="cart__item__info">
+                <a href="{{ item.url }}">
+                  <div class="cart__item__title">{{ item.product.title }}</div>
+                </a>
+                <div class="cart__item__variant">Size: {{ item.variant.title }}</div>
+                <div class="cart__item__price">
+                  {{ item.original_price | money_with_currency }}
+                </div>
+                <div class="cart__item__discount">
+                  {% for discount in item.discounts -%}
+                    {{- discount.title -}}
+                  {%- endfor %}
+                </div>
+              </div>
+              <div class="cart__item__quantity">
+                {% include 'quantity', name: 'updates[]', id: 'updates_{{ item.key }}', defaultValue: item.quantity %}
+                {% comment %} <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0"> {% endcomment %}
+              </div>
+              <div class="cart__item__cost">
+                {% if item.original_line_price != item.line_price %}{{ item.original_line_price | money }}{% endif %}
+                {{ item.line_price | money }}
+              </div>
+            </div>
+          {% endfor %}
+          <div class="cart__summary">
+            <div class="cart__update"><button type="submit" name="update">Update Cart</button></div>
+            <div class="cart__cost">
+              <div class="cart__cost__title">Order Total</div>
+              <div class="cart__cost__price">{{ cart.total_price | money }}</div>
+              <div class="cart__cost__disclaimer">*Shipping and tax are calculated during checkout.</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="cart__checkout">
+          <button type="submit" name="checkout">Checkout</button>
+          {% if shopify_payment_methods contains 'shopify_payments' %}
+            <button class="dynamic-checkout-cart__button dynamic-checkout-cart__button--shopify-payments">
+              Shopify Pay
+            </button>
+          {% endif %}
+          {% if shopify_payment_methods contains 'paypal' %}
+            <button class="dynamic-checkout-cart__button dynamic-checkout-cart__button--paypal">PayPal</button>
+          {% endif %}
+          {% if shopify_payment_methods contains 'apple_pay' %}
+            <button class="dynamic-checkout-cart__button dynamic-checkout-cart__button--apple-pay">Apple Pay</button>
+          {% endif %}
+          {% if shopify_payment_methods contains 'google_pay' %}
+            <button class="dynamic-checkout-cart__button dynamic-checkout-cart__button--google-pay">Google Pay</button>
+          {% endif %}
+        </div>
+      </div>
+    </form>
+  {% else %}
+    <div class="cart__empty">
+      <h2>cart</h2>
+      Cart is empty
+    </div>
+  {% endif %}
+</div>

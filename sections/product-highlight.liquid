@@ -1,0 +1,57 @@
+{% comment %} EXAMPLE SECTION FILE {% endcomment %}
+{{ 'section.product-highlight.css' | asset_url | stylesheet_tag }}
+
+<section>
+
+  <div class="product-highlight">
+
+    <div class="product-highlight__image">
+      <img src="{{ section.settings.image_1 | img_url: 'master' }}" loading="lazy" alt="">
+    </div>
+
+    <div class="product-highlight__content--wrapper">
+      <div class="product-highlight__content">
+        <div class="product-highlight__content--category"></div>
+        <div class="product-highlight__content--title">{{ section.settings.title }}</div>
+        <div class="product-highlight__content--description">{{ section.settings.description }}</div>
+        <div class="product-highlight__content--button"><a href="#" class="btn">Shop Now</a></div>
+      </div>
+    </div>
+  
+  </div>
+
+  {% for block in section.blocks %}
+    {% render block %}
+  {% endfor %}
+</section>
+
+
+
+{% schema %}
+  {
+    "name": "Product Highlights",
+    "blocks": [
+      {
+        "type": "@app"
+      }
+    ],
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "Main Collection"
+      },
+      {
+        "type": "textarea",
+        "id": "description",
+        "label": "Description"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_1",
+        "label": "Image"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,97 @@
+@import "Helpers/_helpers";
+
+.footer {
+  max-width: 100vw;
+  margin-top: 5rem;
+
+  &__logo {
+    background-color: #242424;
+    padding: 2rem;
+    color: $white;
+    text-align: center;
+    font-family: $cormorant;
+    img {
+      margin: 0 auto;
+      display: block;
+      width: 100px;
+    }
+  }
+
+  &__localization {
+    label {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    select {
+      background-color: $white;
+      padding: 0.5rem;
+      cursor: pointer;
+      border: none;
+    }
+  }
+  &__social {
+    margin-top: 1rem;
+    &__title {
+      font-weight: bold;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    &__links {
+      display: flex;
+      gap: 0.35rem;
+    }
+  }
+
+  &__content {
+    background-color: #242424;
+    color: $white;
+    display: flex;
+    align-items: space-between;
+    flex-direction: column;
+    @include mq($medium) {
+      flex-direction: row;
+    }
+  }
+
+  &__other {
+    padding: 2rem;
+    flex: 0 1 auto;
+  }
+
+  &__menus {
+    display: flex;
+    justify-content: space-between;
+    padding: 2rem;
+    padding-right: 15%;
+    flex: 1 1 auto;
+    .linklist {
+      &__title {
+        font-weight: bold;
+        margin-bottom: 0.55rem;
+      }
+      a {
+        display: block;
+        font-size: 0.85rem;
+      }
+    }
+  }
+
+  &__copyright {
+    background-color: #242424;
+    color: $white;
+    display: flex;
+    border-top: 1px solid $white;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    font-size: 0.85rem;
+  }
+  &__brand {
+    text-transform: uppercase;
+    font-weight: bold;
+    span {
+      font-size: 0.5rem;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+@import "Helpers/variables";
+
+.hero {
+  width: 100%;
+  position: relative;
+  img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: cover;
+  }
+
+  &__content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    &__button,
+    &__button:link {
+      background-color: $textColor;
+      padding: 1rem 2rem;
+      color: $backgroundColor;
+      transition: all 0.3s ease-in-out;
+      text-transform: uppercase;
+      font-weight: bold;
+      letter-spacing: 0.1rem;
+      margin-top: 2rem;
+      display: inline-block;
+
+      &:visited {
+        color: $backgroundColor;
+      }
+      &:hover {
+        background-color: $black;
+        color: $white;
+      }
+    }
+
+    p {
+      max-width: 500px;
+    }
+
+    &--inner {
+      text-align: center;
+      text-shadow: 0 0 10px rgba($textColor, 0.5);
+      h1 {
+        font-size: 45px;
+        font-weight: 100;
+        font-weight: 500;
+        margin: 0;
+        line-height: 1;
+      }
+      h6 {
+        font-size: 1rem;
+        font-weight: bold;
+        font-family: $cormorant;
+        margin: 0;
+      }
+      h2 {
+        font-size: 30px;
+        font-weight: 300;
+        margin: 10px;
+      }
+
+      p a:link {
+        font-size: 25px;
+        margin-top: 3rem;
+        display: inline-block;
+      }
+    }
+
+    &--outer {
+      position: sticky;
+      top: 75px;
+      left: 0;
+      width: 100%;
+      height: calc(100vh - 75px);
+      display: flex;
+      justify-content: center;
+      align-items: flex-end;
+      padding: 0 30px;
+      padding-bottom: 5rem;
+      z-index: 2;
+
+      &::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: linear-gradient(
+          180deg,
+          rgba(255, 255, 255, 0) 1%,
+          #fff 100%
+        );
+        z-index: -1;
+      }
+    }
+  }
+}

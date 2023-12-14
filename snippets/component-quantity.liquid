@@ -1,0 +1,16 @@
+<div class="component__quantity" data-component="quantity">
+  <div class="js-plus component__quantity__plus">+</div>
+  <div class="js-number component__quantity__number">
+    {% if defaultValue %}{{ defaultValue }}{% endif %}
+  </div>
+  <div class="js-minus component__quantity__minus">-</div>
+  <input
+    type="hidden"
+    class="js-input"
+    {% if id %}
+      id="{{ id }}"
+    {% endif %}
+    name="{{ name }}"
+    value="{{ defaultValue }}"
+  >
+</div>

@@ -1,0 +1,53 @@
+{{ 'section.hero.css' | asset_url | stylesheet_tag }}
+
+<section>
+  <div class="hero">
+    <div class="hero__image">
+      <img
+        src="{{ section.settings.hero_image | image_url: width: 1500, height: 3000 }}"
+        width="1500"
+        height="3000"
+        loading="eager"
+        alt="{{ section.settings.hero_image.alt | escape }}"
+      >
+    </div>
+    <div class="hero__content">
+      <div class="hero__content--outer">
+        <div class="hero__content--inner">
+          <div class="hero__content__content">{{ section.settings.content }}</div>
+          <a class="hero__content__button" href="{{ section.settings.button_link }}">
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Hero",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "hero_image",
+      "label": "Hero Image"
+    },
+    {
+      "type": "richtext",
+      "id": "content",
+      "label": "Hero Content"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Hero Button Text"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Hero Button Link"
+    }
+  ]
+}
+{% endschema %}
