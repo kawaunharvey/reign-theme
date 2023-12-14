@@ -43,10 +43,21 @@
               "buttonlink": "shopify:\/\/collections\/classic-jock-briefs",
               "collection": "classic-jock-briefs"
             }
+          },
+          "e7333c36-a6c9-4c9a-9ec6-7d657ac01d46": {
+            "type": "collection",
+            "settings": {
+              "title": "Best Hits",
+              "description": "",
+              "buttontext": "",
+              "buttonlink": "",
+              "collection": "whats-new"
+            }
           }
         },
         "block_order": [
-          "39b62f56-d0e0-4049-8968-1af1b57502f0"
+          "39b62f56-d0e0-4049-8968-1af1b57502f0",
+          "e7333c36-a6c9-4c9a-9ec6-7d657ac01d46"
         ],
         "settings": {
         }
