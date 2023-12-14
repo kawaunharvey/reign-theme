@@ -48,9 +48,9 @@
             "type": "collection",
             "settings": {
               "title": "Best Hits",
-              "description": "",
-              "buttontext": "",
-              "buttonlink": "",
+              "description": "<p>Our most popular content ready for you<\/p>",
+              "buttontext": "Shop",
+              "buttonlink": "shopify:\/\/collections\/whats-new",
               "collection": "whats-new"
             }
           }
