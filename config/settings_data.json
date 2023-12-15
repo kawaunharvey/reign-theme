@@ -1,10 +1,13 @@
 {
   "current": {
+    "site_name": "Reign By Stephen",
+    "site_logo": "shopify:\/\/shop_images\/rbs-logo.svg",
+    "site_footer_logo": "shopify:\/\/shop_images\/logo.svg",
     "sections": {
       "hero": {
         "type": "hero",
         "settings": {
-          "hero_image": "shopify:\/\/shop_images\/6EE5F569-9BE5-4C79-BCA0-5686E567A484.jpg",
+          "hero_image": "shopify:\/\/shop_images\/IMG_1127.heic",
           "content": "<h6>Winter 2023<\/h6><h1>PRE-ORDER TODAY<\/h1><p>Get cozy this winter with our new collection.<\/p>",
           "button_text": "pre-order",
           "button_link": "shopify:\/\/collections\/winter-collection"
