@@ -3,6 +3,8 @@
     "site_name": "Reign By Stephen",
     "site_logo": "shopify:\/\/shop_images\/rbs-logo.svg",
     "site_footer_logo": "shopify:\/\/shop_images\/logo.svg",
+    "promotion_text": "Shop The Winter Collection",
+    "promotion_link": "shopify:\/\/collections\/winter-collection",
     "sections": {
       "hero": {
         "type": "hero",
